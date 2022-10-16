@@ -7,7 +7,7 @@ const Item = ({productos}) =>{
         
         <div class="container-card"> 
             <div>
-                <img src={productos.images} alt="" />
+                <img width="100%" height="300px" src={productos.images} alt="" />
             </div>
            
          <h1>{productos.title}</h1>

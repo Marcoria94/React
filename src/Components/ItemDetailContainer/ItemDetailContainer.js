@@ -2,7 +2,7 @@ import React, {useState , useEffect} from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({greeting}) => {
       const [producto , setProducto] = useState([])
       const [loading, setLoading] = useState(true);
 
@@ -23,6 +23,7 @@ const ItemDetailContainer = () => {
 
     return (
       <>
+      <h1>{greeting}</h1>
       { <> { loading ? <h1> Cargando</h1> : < ItemDetail producto={producto}/> } </>}
       </>
     )
