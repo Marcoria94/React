@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 200px;
+    margin: 20px;
+    box-shadow: 2px 2px 2px 2px;
+    
+
+}
+.contador{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 5px; 
+    margin: 5px;
+}
+.botonContador{
+    color: red;
+    padding: 5px;
+    margin: 5px;
+}
+.botonAgregar{
+    width: 25px;
+    height: 25px;
+    color: black
+}
+.botonRestar{
+    width: 25px;
+    height: 25px;
+    color: black
+
+}
+.botonCarrito{
+    color: black;
+}

@@ -1,0 +1,32 @@
+header{
+    display: flex;
+    height: 15vh;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px  2px 2px 2px black;
+    
+}
+
+ul li{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+li a{
+    color: black;
+    font-weight: 600;
+    font-size: large;
+    margin: 10px;
+    text-decoration: none;
+    padding: 5px;
+    
+   
+}
+li a:hover {
+    color:blue}
+.carrito {
+    margin:20px;
+}
+.carrito:hover{
+    transform: scale(20px)
+}
