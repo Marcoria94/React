@@ -11,3 +11,11 @@
     align-items: center;
    
 }
+.verDetalles{
+    color: white;
+    background-color: blue;
+    border: 1px solid blue;
+    border-radius: 15px;
+    font-size: medium;
+    padding: 10px;
+}

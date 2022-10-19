@@ -3,8 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 200px;
     margin: 20px;
     box-shadow: 2px 2px 2px 2px;
     
@@ -20,8 +18,8 @@
 }
 .botonContador{
     color: red;
-    padding: 5px;
-    margin: 5px;
+    padding: 3px;
+    margin: 3px;
 }
 .botonAgregar{
     width: 25px;
@@ -35,5 +33,10 @@
 
 }
 .botonCarrito{
-    color: black;
+    color: white;
+    background-color: blue;
+    border: 1px solid blue;
+    border-radius: 25px;
+    font-size: medium;
+    padding: 5px;
 }
