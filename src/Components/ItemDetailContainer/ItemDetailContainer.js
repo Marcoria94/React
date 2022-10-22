@@ -9,6 +9,8 @@ const ItemDetailContainer = ({greeting}) => {
       const {id} = useParams();
 
 
+
+
       useEffect ( ()=> {
         setTimeout( () => {
             fetch(`https://api.escuelajs.co/api/v1/products/${id}`)
@@ -19,7 +21,6 @@ const ItemDetailContainer = ({greeting}) => {
 
         } , 2000 )
       }, [id]) 
-
 
     return (
       <>

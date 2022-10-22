@@ -31,7 +31,7 @@ import "./ItemCount.css"
         <button onClick={subtract} className="botonRestar">-</button>
         </div>
         <div className="botonContador">
-            <button onClick={onAdd} className="botonCarrito">Agregar al carrito
+            <button onClick={()=>onAdd(count)} className="botonCarrito">Agregar al carrito
         </button></div>
         </div>
         </>

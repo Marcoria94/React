@@ -24,14 +24,14 @@ fetch(id === undefined ?  URL_MAIN : URL_CATEGORY)
     .catch((err) => console.log(err))
     .finally(setLoading(false))
 }, 1000)
-}, [id]);
+}, [id, URL_MAIN,URL_CATEGORY]);
         
 
 
     return(
         <>
         <h1>{greeting}</h1>
-       <div class="card-item">
+       <div className="card-item">
         { <> {loading ? <h1>Cargando</h1> : < Itemlist productos={productos} /> } </>}
         
         </div>
