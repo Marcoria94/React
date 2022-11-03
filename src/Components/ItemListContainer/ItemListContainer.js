@@ -1,6 +1,9 @@
 import React , {useState , useEffect} from "react";
 import Itemlist from '../ItemList/ItemList';
 import { useParams } from "react-router-dom";
+import {getDocs , collection, query, where} from "firebase/firestore"
+import { db } from "../../firebase/firebase";
+import './ItemListContainer.css'
 
 
 export const ItemListContainer = ({greeting}) => {
@@ -11,20 +14,25 @@ const [loading, setLoading] = useState(true);
 
 const {id} = useParams();
 
-const URL_MAIN = 'https://api.escuelajs.co/api/v1/products'
-const URL_CATEGORY = `https://api.escuelajs.co/api/v1/categories/${id}/products`
 
+const productCollection = collection (db , 'productos')
+const q = query(productCollection, where('category', '==' , `${id}`))
 
 useEffect(()=>{
-    setTimeout(() => {
-fetch(id === undefined ?  URL_MAIN : URL_CATEGORY)
-    .then(res => res.json() )
-    .then((data) => {setProductos(data)
-    console.log(data)})
-    .catch((err) => console.log(err))
-    .finally(setLoading(false))
-}, 1000)
-}, [id, URL_MAIN,URL_CATEGORY]);
+    
+    getDocs(  id ? q : productCollection)
+    .then((result) => {
+        const ListaDeProductos =  result.docs.map( item => {
+            return {
+                ...item.data() ,
+                id: item.id,
+            };
+        });
+        setProductos (ListaDeProductos)
+    })
+    .catch(err => console.log(err))
+    .finally(setLoading(false))   
+}, [id,productCollection]);
         
 
 

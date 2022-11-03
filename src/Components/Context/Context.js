@@ -1,4 +1,7 @@
 import React ,{createContext ,useState,useEffect} from "react";
+import {db} from "../../firebase/firebase";
+import {collection , addDoc , serverTimestamp , doc , updateDoc} from "firebase/firestore"
+
 
 export const Context = createContext()
 
@@ -44,8 +47,22 @@ export const CustomProvider = ({ children }) => {
       setTotal(0);
     };
   
+    const finalizarCompra = (valores) => {
+      const ventasColleciton = collection(db , 'ventas');
+      addDoc(ventasColleciton , {
+          valores,
+          items: cart ,
+          total,
+          date:serverTimestamp()
+      })
+      .then(result => {
+          const comprobanteId = result.id;
+      })
+
+      clear();
+  }
     return (
-      <Context.Provider value={{ cart, qty, total, addItem, deleteItem, clear, IsInCart }}>
+      <Context.Provider value={{ cart, qty, total, addItem, deleteItem, clear, IsInCart , finalizarCompra }}>
         {children}
       </Context.Provider>
     );

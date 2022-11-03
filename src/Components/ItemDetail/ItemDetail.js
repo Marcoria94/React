@@ -1,8 +1,8 @@
 import React,{useState, useContext} from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
-import './ItemDetail.css'
-import { Context } from "../Context/Context"
+import './ItemDetail.css';
+import { Context } from "../Context/Context";
 
 
 const ItemDetail = ({producto}) => {
@@ -21,14 +21,14 @@ const ItemDetail = ({producto}) => {
       </div>
       <div className="detail">
       <h1 key={producto.id}>{producto.title}</h1>
-      <p>Descripcion :{producto.description}</p>
-      <h2>Precio : ${producto.price}</h2>
+      <p>{producto.description}</p>
+      <h2>${producto.price}</h2>
 
       <div className="Contador"> 
       { proceso ?
-      <ItemCount  stock={25} initial={1} onAdd={onAdd}/>
+      <ItemCount  stock={producto.stock} initial={1} onAdd={onAdd}/>
       : <Link to="/cart">
-        <button className="finalizar">Finalizar compra</button>
+        <button className="finalizar">IR AL CARRITO</button>
       </Link>
     }
       </div>

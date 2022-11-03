@@ -1,6 +1,8 @@
 import React, {useState , useEffect} from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import {getDoc, collection, doc} from "firebase/firestore"
+import { db } from "../../firebase/firebase";
 
 const ItemDetailContainer = ({greeting}) => {
       const [producto , setProducto] = useState([])
@@ -11,15 +13,19 @@ const ItemDetailContainer = ({greeting}) => {
 
 
 
-      useEffect ( ()=> {
-        setTimeout( () => {
-            fetch(`https://api.escuelajs.co/api/v1/products/${id}`)
-            .then(res => res.json())
-            .then((data) => { setProducto(data)})
-            .catch((err) => console.log(err))
-            .finally(setLoading(false))
 
-        } , 2000 )
+      useEffect ( ()=> {
+        const productCollection = collection( db , 'productos')
+        const refDoc = doc (productCollection, id)
+          getDoc(refDoc)
+           .then(result => {
+            setProducto({
+              id : result.id ,
+              ...result.data()
+            })
+           })
+           .catch( err => {console.log(err);})
+           .finally(setLoading(false))
       }, [id]) 
 
     return (
