@@ -1,10 +1,12 @@
 header{
     display: flex;
-    height: 15vh;
     align-items: center;
     justify-content: space-between;
     box-shadow: 2px  2px 2px 2px gray;
     
+}
+.logo-nav{
+    height: 5rem;
 }
 
 ul li{
@@ -24,4 +26,10 @@ li a{
 }
 li a:hover {
     color:blue}
+
+.carrito{
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+}
 

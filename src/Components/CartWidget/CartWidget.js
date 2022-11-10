@@ -12,8 +12,8 @@ const CartWidget = () => {
         <>
          { cart.length === 0 ? (<ShoppingCartIcon fontSize="large" /> ) : 
          <div className="cartCartwidget">
-          <ShoppingCartIcon fontSize="large" /> 
-          <p className="cantidad"><span>{qty}</span></p>
+          <ShoppingCartIcon fontSize="large" color="primary" /> 
+          <p className="cantidad">{qty}</p>
           </div> }
        
          </>

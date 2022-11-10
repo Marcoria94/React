@@ -7,6 +7,7 @@ import "./Cart.css";
 
 const Cart = () => {
     const { cart, total, clear, deleteItem} = useContext(Context)
+    
 
 
     return ( 
@@ -14,9 +15,10 @@ const Cart = () => {
         <>
         
         { cart.length === 0  ? (
-        <>
+         <div className="cart-vacio">
          <h1>Tu carrito esta vacio, compra ahora <Link to="/"><span> CLICK AQUI</span></Link></h1>
-        </> )  : 
+         </div>
+         )  : 
           ( <>
         { cart.map((product) =>  { 
             return (
@@ -24,7 +26,7 @@ const Cart = () => {
            <div className="cart-img">
         <img className="img-cart" alt={product.title} src={product.images}/>
            </div>
-           <div className="cart-detail">
+        <div className="cart-detail">
         <h2>{product.title}</h2>
         <h2>Precio : {product.price}</h2>
         <h3>Cantidad : {product.count}</h3>
@@ -36,7 +38,11 @@ const Cart = () => {
        )
        }
        <div className="detail-cart">
-       <h3>Precio total de compra <span className="total">$ {total}</span></h3>
+
+        <h3>Precio total de compra $ {total}</h3>
+       </div>
+       <div className="detail-cart">
+      
         <Link to="/">
         <button className="boton-continue">Continuar comprando</button>
         </Link>

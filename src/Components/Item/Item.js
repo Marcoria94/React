@@ -10,8 +10,8 @@ const Item = ({productos}) =>{
                 <img width="100%" height="300px" src={productos.images} alt="" />
             </div>
            
-         <h1>{productos.title}</h1>
-         <h2>Precio: ${productos.price}</h2>
+         <h2>{productos.title}</h2>
+         <h3>Precio: ${productos.price}</h3>
          <Link to={'/products/'+ productos.id}>
          <button className="verDetalles">Ver detalles</button>
          </Link>

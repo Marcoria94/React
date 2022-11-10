@@ -1,7 +1,8 @@
 .cartCartwidget{
     display: flex;
     align-items: center;
-    margin: 20px;
+    margin: 30px;
+    padding: 5px;
     
 }
 .cantidad{
@@ -11,4 +12,5 @@
    border-radius: 30%;
    padding: 5px;
    color: white;
+   margin: 10px;
 }

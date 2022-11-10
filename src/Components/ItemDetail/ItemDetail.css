@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     box-shadow: 2px 2px 2px 2px gray;
     margin: 10px; 
+    text-decoration: none;
 }
 .detailImg{
     margin: 10px;
@@ -21,12 +22,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  justify-items: center;
+  align-items: center;
 }
 .contador {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 .finalizar {
   color: white;
@@ -35,4 +37,13 @@
   border-radius: 15px;
   font-size: medium;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.div-count{
+  display: flex;
+  justify-content: center;
+  justify-items:center;
+  margin: 10px;
 }

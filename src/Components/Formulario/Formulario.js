@@ -5,7 +5,7 @@ import { Context } from "../Context/Context";
 import { Formik } from "formik";
 
 const Formulario = () => {
-    const {finalizarCompra} = useContext(Context)
+    const {finalizarCompra , comprobante} = useContext(Context)
     const [alerta, setAlerta] = useState(false)
 
 
@@ -50,9 +50,8 @@ const Formulario = () => {
                 
                 }
             }
-            onSubmit={(valores, {resetForm})=>{ 
-                resetForm();
-               //finalizarCompra(valores)
+            onSubmit={(valores)=>{ 
+               finalizarCompra(valores)
                setAlerta(true)
                }}
             >
@@ -110,16 +109,16 @@ const Formulario = () => {
                    <div>
                    <button type="submit"> Enviar </button>
                    </div>
-                   <div className="sweetAlert">
+                  
                    { alerta && 
-                   <>
-                   <p>Tu codigo de compra es</p>
-                   <Link to="/check">
-                   <button>Corroborar compra</button>
+                   <div className="div-comprobante">
+                   <h4>ID de compra {comprobante}</h4>
+                   <p>Conservar ID de compra para cualquier tipo de reclamo.</p>
+                   <Link to="/">
+                   <button className="finalizar">Menu principal</button>
                    </Link>
-                   </>
-                   }
                    </div>
+                   }
                  
             
                    </div>

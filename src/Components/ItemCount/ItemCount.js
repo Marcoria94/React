@@ -22,9 +22,6 @@ import "./ItemCount.css"
     return( 
         <>
         <div className="container">
-            <div>
-                
-            </div>
         <div className="contador">
         <button onClick={add} className="botonAgregar">+</button>
         <h2>{count}</h2>

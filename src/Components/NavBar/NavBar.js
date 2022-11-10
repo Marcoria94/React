@@ -1,6 +1,6 @@
 import React from "react";
 import './NavBar.css';
-import logo from "../../assets/portoon.png";
+import logo from "../../assets/logoTienda.png";
 import CartWidget from '../CartWidget/CartWidget'
 import { Link, NavLink } from "react-router-dom";
 
@@ -16,7 +16,7 @@ const NavBar = () => {
     return (
        <header>
         <Link to='/'>
-        <img src= {logo} alt="" />
+        <img src= {logo} alt="logo de la tienda"  className="logo-nav"/>
         </Link>
         <nav>
             <ul>

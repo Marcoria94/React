@@ -9,6 +9,9 @@ export const CustomProvider = ({ children }) => {
     const [cart , setCart] = useState([]);
     const [qty , setQty] = useState(0);
     const [total , setTotal] = useState(0);
+    const [comprobante, setComprobante] = useState('')
+   
+
   
     useEffect(() => {
       setQty(cart.reduce((total, item) => total + item.count, 0))
@@ -57,12 +60,23 @@ export const CustomProvider = ({ children }) => {
       })
       .then(result => {
           const comprobanteId = result.id;
+          setComprobante(comprobanteId)
       })
-
+      .catch(err => {(console.log(err))})
+      .finally(actualizarStock)
       clear();
   }
+
+  const actualizarStock = () =>{
+  cart.forEach( producto => { 
+  const cambiarStock = doc(db, "productos", producto.id )
+  updateDoc(cambiarStock, { stock: producto.stock - producto.count})  
+})
+  }
+
+
     return (
-      <Context.Provider value={{ cart, qty, total, addItem, deleteItem, clear, IsInCart , finalizarCompra }}>
+      <Context.Provider value={{ cart, qty, total, addItem, deleteItem, clear, IsInCart , finalizarCompra , comprobante , actualizarStock}}>
         {children}
       </Context.Provider>
     );

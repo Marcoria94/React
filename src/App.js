@@ -5,14 +5,14 @@ import { ItemListContainer } from "./Components/ItemListContainer/ItemListContai
 import { BrowserRouter, Routes , Route } from "react-router-dom";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
 import Formulario from "./Components/Formulario/Formulario";
-import Cart from "./Components/Cart/Cart"
-import Checked from "./Components/Checked/Checked";
+import Cart from "./Components/Cart/Cart";
 import { CustomProvider } from "./Components/Context/Context";
+import Footer from "./Components/Footer/Footer";
 
 
 
 const App = () => {
-  const mensaje = "Bienvenidos";
+  const mensaje = "Bienvenidos a MarketPlace";
 
   return (
   <>
@@ -25,10 +25,11 @@ const App = () => {
     <Route path="/products/:id" element={<ItemDetailContainer greeting={mensaje} />}/>
     <Route path="/cart" element={< Cart />}/>
     <Route path="/formulario" element={ <Formulario />} />
-    <Route path="/check" element={<Checked />}/>
   </Routes>
   </CustomProvider>
   </BrowserRouter>
+  <Footer />
+  
   </>
   )
 }
