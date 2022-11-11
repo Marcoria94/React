@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Marcoria94.github.io/React/static/css/main.d371fd00.css",
+    "main.js": "/Marcoria94.github.io/React/static/js/main.0764983f.js",
+    "static/js/787.b86be1b7.chunk.js": "/Marcoria94.github.io/React/static/js/787.b86be1b7.chunk.js",
+    "static/media/logoTienda.png": "/Marcoria94.github.io/React/static/media/logoTienda.d6aa7f53ee6bb3dbafaa.png",
+    "index.html": "/Marcoria94.github.io/React/index.html",
+    "main.d371fd00.css.map": "/Marcoria94.github.io/React/static/css/main.d371fd00.css.map",
+    "main.0764983f.js.map": "/Marcoria94.github.io/React/static/js/main.0764983f.js.map",
+    "787.b86be1b7.chunk.js.map": "/Marcoria94.github.io/React/static/js/787.b86be1b7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d371fd00.css",
+    "static/js/main.0764983f.js"
+  ]
+}
